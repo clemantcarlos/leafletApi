@@ -1,0 +1,229 @@
+### --- CONFIG---
+### RECUPERAR TURNO
+GET http://localhost:3000/config/turno
+### RECUPERAR TURNO
+GET http://localhost:3000/config/turno/51056c84-ba7e-4b61-be1d-23ade4fee040
+### CREAR UN TURNO
+POST http://localhost:3000/config/turno
+Content-Type: application/json
+
+{
+  "nombre":"Tasdfe",
+  "descripcion":"Turno de 12:00pm a 4:00pm"
+}
+
+### ELIMINAR TURNO
+DELETE http://localhost:3000/config/turno/f3fa348b-9a76-4d3e-9d5a-42f580fd3bb9
+
+### RECUPERAR SECCION
+GET http://localhost:3000/config/seccion
+### RECUPERAR SECCION
+GET http://localhost:3000/config/seccion/95bfd3bb-1511-4664-b1dd-9fe7591408fa
+### CREAR UN SECCION
+POST http://localhost:3000/config/seccion
+Content-Type: application/json
+
+{
+  "nombre":"C",
+  "descripcion":"Seccion C"
+}
+
+### RECUPERAR GRADO ESCOLAR
+GET http://localhost:3000/config/gradoEscolar
+### RECUPERAR GRADO ESCOLAR
+GET http://localhost:3000/config/gradoEscolar/22945858-2509-4cab-bd7f-db188d9e76ef
+### CREAR UN GRADO ESCOLAR
+POST http://localhost:3000/config/gradoEscolar
+Content-Type: application/json
+
+{
+  "nombre":"1ro",
+  "descripcion":"Sexto grado de primaria"
+}
+
+### RECUPERAR GRADO ACADEMICO
+GET http://localhost:3000/config/gradoAcademico
+### RECUPERAR GRADO ACADEMICO
+GET http://localhost:3000/config/gradoAcademico/22945858-2509-4cab-bd7f-db188d9e76ef
+### CREAR UN GRADO ACADEMICO
+POST http://localhost:3000/config/gradoAcademico
+Content-Type: application/json
+
+{
+  "nombre":"Bachiller",
+  "descripcion":"Persona con titulo de bachiller"
+}
+### RECUPERAR TIPO PERSONAL
+GET http://localhost:3000/config/tipoPersonal
+### RECUPERAR TIPO PERSONAL
+GET http://localhost:3000/config/tipoPersonal/e14d7a33-8cc8-4a32-8281-9c49fe2d2056
+### CREAR UN TIPO PERSONAL
+POST http://localhost:3000/config/tipoPersonal
+Content-Type: application/json
+
+{
+  "nombre":"Root",
+  "descripcion":"Usuario encargado del sistema"
+}
+### RECUPERAR GENEROS
+GET http://localhost:3000/config/genero
+### RECUPERAR GENEROS
+GET http://localhost:3000/config/genero/0
+### CREAR UN GENERO
+POST http://localhost:3000/config/genero
+Content-Type: application/json
+
+{
+  "nombre":"Femenino",
+  "descripcion":"Personas nacidas con genitales femeninos"
+}
+### ELIMINAR UN GENERO
+DELETE http://localhost:3000/config/genero/881b15b1-b0a5-47b3-83ca-fc37f1852427
+### --- DOCENTE ---
+### RECUPERAR DOCENTE
+GET http://localhost:3000/docente
+### RECUPERAR DOCENTE POR TURNO
+GET http://localhost:3000/docente?turno=51056c84-ba7e-4b61-be1d-23ade4fee040
+### RECUPERAR DOCENTE POR ID
+GET http://localhost:3000/docente/b088a6df-ba4b-4c32-8f7c-576a08923b02
+### CREAR UN PERSONAL
+POST http://localhost:3000/docente
+Content-Type: application/json
+
+{
+  "nombre":"Carlos",
+  "apellido":"Clemant",
+  "direccion":"muy muy lejano",
+  "email":"clemantcarlos11@gmail.com",
+  "fecha_nacimiento":"2001-05-11T00:00:00Z",
+  "cedula":27944093,
+  "cedula_tipo":"V",
+  "telefono":4125507613,
+  "rif":279440931,
+  "rif_tipo":"V",
+  "id_grado_academico":"22945858-2509-4cab-bd7f-db188d9e76ef",
+  "id_turno": "51056c84-ba7e-4b61-be1d-23ade4fee040",
+  "id_grado_escolar":"2fa6d0dc-4f5f-444f-89c9-933883f8caaf",
+  "id_seccion":"95bfd3bb-1511-4664-b1dd-9fe7591408fa"
+}
+
+### --- PERSONAL ---
+### RECUPERAR PERSONAL
+GET http://localhost:3000/personal
+
+### RECUPERAR PERSONAL POR ROL
+GET http://localhost:3000/personal?role=82045d1a-3ef3-4397-b1d4-67956ca042fe
+
+### RECUPERAR PERSONAL POR ID
+GET http://localhost:3000/personal/689cbdff-df2a-4f77-849c-9c992fa1f2f8
+
+### CREAR UN PERSONAL
+POST http://localhost:3000/personal
+Content-Type: application/json
+
+{
+  "nombre":"Carlos",
+  "apellido":"Clemant",
+  "direccion":"muy muy lejano",
+  "email":"clemantcarlos11@gmail.com",
+  "fecha_nacimiento":"2001-05-11T00:00:00Z",
+  "cedula":27944093,
+  "cedula_tipo":"V",
+  "telefono":4125507613,
+  "rif":279440931,
+  "rif_tipo":"V",
+  "id_tipo_personal":"82045d1a-3ef3-4397-b1d4-67956ca042fe",
+  "id_grado_academico":"22945858-2509-4cab-bd7f-db188d9e76ef",
+  "id_turno": "51056c84-ba7e-4b61-be1d-23ade4fee040"
+}
+
+### MODIFICAR UN PERSONAL
+PATCH http://localhost:3000/personal/689cbdff-df2a-4f77-849c-9c992fa1f2f8
+Content-Type: application/json
+
+{
+  "nombre":"personalito"
+}
+### ELIMINAR UN PERSONAL
+DELETE http://localhost:3000/personal/4d5f48ee-eb07-4cf0-927a-739e0d3ef6e3
+
+### --- ALUMNOS ---
+### RECUPERAR ALUMNOS
+GET http://localhost:3000/alumno
+
+### RECUPERAR ALUMNOS POR REPRESENTANTE
+GET http://localhost:3000/alumno?cedulaParent=30313130
+
+### RECUPERAR ALUMNOS POR ID
+GET http://localhost:3000/alumno/7e028005-5c83-4817-b107-63b8f826a757
+
+### RECUPERAR ALUMNOS POR GENERO
+GET http://localhost:3000/alumno?genre=4dc39ab0-593c-49c4-b5bb-cd89fa89fcb4
+
+
+### CREAR UN ALUMNO
+POST http://localhost:3000/alumno
+Content-Type: application/json
+
+{
+  "nombre":"alumno",
+  "apellido":"alumno",
+  "email":"alumno@gmail.com",
+  "fecha_nacimiento":"2001-01-01T00:00:00Z",
+  "lugar_nacimiento":"Araure",
+  "cedula":2222222,
+  "cedula_tipo":"V",
+  "parent_cedula":2222222,
+  "parent_cedula_tipo":"V",
+  "id_sexo":"4dc39ab0-593c-49c4-b5bb-cd89fa89fcb4",
+  "id_grado_escolar":"2fa6d0dc-4f5f-444f-89c9-933883f8caaf",
+  "id_seccion":"95bfd3bb-1511-4664-b1dd-9fe7591408fa",
+  "id_turno": "51056c84-ba7e-4b61-be1d-23ade4fee040"
+  }
+
+### MODIFICAR ALUMNO
+PATCH http://localhost:3000/alumno/8c976528-7bd7-464c-83f5-4a7478926637
+Content-Type: application/json
+
+{
+ "email":"email@gmail.com"
+}
+### ELIMINAR ALUMNO
+DELETE http://localhost:3000/alumno/160fe88e-e582-40d6-b2e9-795c8674774d
+
+
+### --- REPRESENTANTE ---
+### RECUPERAR REPRESENTANTES
+GET http://localhost:3000/representante
+
+### RECUPERAR REPRESENTANTE POR ALUMNO
+GET http://localhost:3000/representante?cedulaChild=29313130
+
+### RECUPERAR REPRESENTANTE POR ID
+GET http://localhost:3000/representante/28e8cadb-fddd-4e46-ba61-b470eaab9f07
+
+### CREAR UN REPRESENTANTE
+POST http://localhost:3000/representante
+Content-Type: application/json
+
+{
+  "nombre":"representante2",
+  "apellido":"apellidoso2",
+  "direccion":"direccion2",
+  "email":"representante2@gmail.com",
+  "fecha_nacimiento":"1990-01-01T00:00:00Z",
+  "cedula":30313130,
+  "cedula_tipo":"V",
+  "telefono":4125507234
+  }
+
+### MODIFICAR ALUMNO
+PATCH http://localhost:3000/representante/28e8cadb-fddd-4e46-ba61-b470eaab9f07
+Content-Type: application/json
+
+{
+ "nombre":"prueba"
+}
+### ELIMINAR REPRESENTANTE
+DELETE http://localhost:3000/representante/9c205abe-6bd5-4f07-b6fc-3eb53264fa8c
+

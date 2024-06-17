@@ -1,0 +1,27 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "escula api",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start-mysql": "node ./src/lowdb.js",
+    "start": "node ./src/lowdb.js",
+    "dev-mysql": "node --watch ./src/server-with-mysql.js",
+    "dev-lowdb": "node --watch ./src/lowdb.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "js"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "4.18.2",
+    "lowdb": "^7.0.1",
+    "zod": "3.22.4"
+  }
+}
