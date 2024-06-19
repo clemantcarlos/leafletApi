@@ -2,10 +2,9 @@ import { randomUUID } from "node:crypto";
 import { getConnection } from "../../src/database.js";
 
 export class MapModel {
-  // GENERO
-  static async getMap() {
-    // const map = getConnection().data.map;
-    return map;
+  static async getCoord({input}) {
+    const coord = input;
+    return coord;
   }
   // static async getGeneroByID({ id }) {
   //   const genero = getConnection().data.genero.find(

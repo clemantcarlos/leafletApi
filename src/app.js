@@ -1,9 +1,8 @@
 import  express, {json} from "express";
 import { createMapRouter } from "../routes/map.js";
-
 import cors from 'cors'
+import bodyParser from "body-parser";
 
-import {lowCreateConnection} from './database.js'
 export const createApp=({mapModel})=>{
   // Setup the app
   const app=express()
@@ -11,19 +10,21 @@ export const createApp=({mapModel})=>{
   app.use(cors())
   app.disable('x-powered-by')
 
+  app.use(bodyParser.urlencoded({
+    extended: true,
+    parameterLimit:100000,
+    limit: "500mb",
+  }));
   // Home page
   app.get('/', (req, res) => {
-    res.json({ message: 'hola mundo' })
+    res.sendFile('mapFront/index.html', { root: '.' })
   })
 
   // Personal router
   app.use('/map',createMapRouter({mapModel}))
   
   // App port  
-  const PORT = process.env.PORT ?? 3000
-
-  // lowdb connection
-  lowCreateConnection()
+  const PORT = process.env.PORT ?? 3500
 
   app.listen(PORT, () => {
     console.log(`server listening on port http://localhost:${PORT}`);
